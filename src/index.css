@@ -41,5 +41,5 @@ body,
 
 /* Handle on Hover */
 ::-webkit-scrollbar-track:hover {
-  background: var(--scroll-track-hover);
+  background: hidden;
 }

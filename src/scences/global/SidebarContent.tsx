@@ -57,25 +57,30 @@ const SidebarContent = () => {
   const [selected, setSelected] = useState("Dashboard");
 
   return (
-    <Box
-      sx={{
-        "& .ps-menu-button .ps-active": {
-          color: `${colors.blueAccent[400]} !important`,
-        },
-        "& .ps-menu-button:hover": {
-          background: `${colors.primary[400]} !important`,
-          color: `${colors.blueAccent[400]} !important`,
-        },
-        "& .css-wx7wi4": {
-          margin: "0 !important",
-        },
+    <Sidebar
+      backgroundColor="none"
+      style={{
+        backgroundColor: `${colors.primary[400]}`,
+        border: "none",
+        height: "100vh",
       }}
     >
-      <Sidebar
-        backgroundColor="none"
-        style={{ backgroundColor: `${colors.primary[400]}`, border: "none" }}
-      >
-        <Menu>
+      <Menu>
+        <Box
+          sx={{
+            "& .ps-menu-button .ps-active": {
+              color: `${colors.blueAccent[400]} !important`,
+            },
+            "& .ps-menu-button:hover": {
+              background: `${colors.primary[400]} !important`,
+              color: `${colors.blueAccent[400]} !important`,
+            },
+            "& .css-wx7wi4": {
+              margin: "0 !important",
+            },
+            overflowX: "hidden",
+          }}
+        >
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={
@@ -264,9 +269,9 @@ const SidebarContent = () => {
               isCollapsed={isCollapsed}
             />
           </Box>
-        </Menu>
-      </Sidebar>
-    </Box>
+        </Box>
+      </Menu>
+    </Sidebar>
   );
 };
 export default SidebarContent;
